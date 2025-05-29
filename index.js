@@ -14,3 +14,25 @@
 //  */
 // const arr = [1, 2, 3]
 // console.log(arr.last());
+
+// Task 2
+// 2620. Counter
+
+/**
+ * @param {number} n
+ * @return {Function} counter
+ */
+var createCounter = function (n) {
+
+    return function () {
+        let out = n
+        n += 1
+        return out
+    }
+}
+
+
+const counter = createCounter(10)
+console.log(counter()) // 10
+console.log(counter()) // 11
+console.log(counter()) // 12
