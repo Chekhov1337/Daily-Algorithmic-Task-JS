@@ -152,3 +152,39 @@
 // console.log(map([1, 2, 3], function plusone(n) {
 //     return n + 1;
 // }))
+
+// Task 8
+// 2648. Generate Fibonacci Sequence
+
+/**
+ * @return {Generator<number>}
+ */
+var fibGenerator = function*() {
+    let prev = 0
+    let curr = 1
+    yield prev
+    yield curr
+
+    let tmp
+    while (true){
+        tmp = curr + prev
+        prev = curr
+        curr = tmp
+        yield tmp
+    }
+}
+
+
+const gen = fibGenerator();
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
+
+
