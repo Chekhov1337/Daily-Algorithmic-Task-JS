@@ -58,12 +58,12 @@
 // Task 4
 // 2626. Array Reduce Transformation
 
-/**
- * @param {number[]} nums
- * @param {Function} fn
- * @param {number} init
- * @return {number}
- */
+// /**
+//  * @param {number[]} nums
+//  * @param {Function} fn
+//  * @param {number} init
+//  * @return {number}
+//  */
 // var reduce = function (nums, fn, init) {
 //     let accum = init
 //
@@ -73,18 +73,41 @@
 //     return accum
 // }
 
-var reduce = function (nums, fn, init) {
-    let accum = init
+// var reduce = function (nums, fn, init) {
+//     let accum = init
+//
+//     nums.forEach((element) => {
+//         accum = fn(accum, element)
+//     })
+//     return accum
+// }
+//
+// let res = reduce([1, 2, 3, 4], function sum(accum, curr) {
+//     return accum + curr
+// }, 0)
+//
+// console.log(res)
 
-    nums.forEach((element) => {
-        accum = fn(accum, element)
-    })
-    return accum
+// Task 5
+// 2629. Function Composition
+
+/**
+ * @param {Function[]} functions
+ * @return {Function}
+ */
+var compose = function(functions) {
+
+    return function(x) {
+        functions.reverse()
+        functions.forEach((func) => {
+            x = func(x)
+        })
+        return x
+    }
 }
 
-let res = reduce([1, 2, 3, 4], function sum(accum, curr) {
-    return accum + curr
-}, 0)
 
+const fn = compose([x => x + 1, x => 2 * x])
+let res = fn(4) // 9
 console.log(res)
 
