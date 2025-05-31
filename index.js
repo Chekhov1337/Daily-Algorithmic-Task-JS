@@ -91,23 +91,64 @@
 // Task 5
 // 2629. Function Composition
 
+// /**
+//  * @param {Function[]} functions
+//  * @return {Function}
+//  */
+// var compose = function(functions) {
+//
+//     return function(x) {
+//         functions.reverse()
+//         functions.forEach((func) => {
+//             x = func(x)
+//         })
+//         return x
+//     }
+// }
+//
+//
+// const fn = compose([x => x + 1, x => 2 * x])
+// let res = fn(4) // 9
+// console.log(res)
+
+// Task 6
+// 2634. Filter Elements from Array
+
 /**
- * @param {Function[]} functions
- * @return {Function}
+ * @param {number[]} arr
+ * @param {Function} fn
+ * @return {number[]}
  */
-var compose = function(functions) {
+// var filter = function (arr, fn) {
+//     for (let i = arr.length - 1; i > -1; i--) {
+//         // console.log(arr[i])
+//         // console.log(fn(arr[i], i))
+//         if (!fn(arr[i], i)) {
+//             arr.splice(i, 1)
+//         }
+//     }
+//     return arr
+// }
+//
+// filter([0, 5, 10, 20, 30], function greaterThan10(n) {
+//     return n > 10;
+// })
 
-    return function(x) {
-        functions.reverse()
-        functions.forEach((func) => {
-            x = func(x)
-        })
-        return x
-    }
-}
+// Task 7
+// 2635. Apply Transform Over Each Element in Array
 
-
-const fn = compose([x => x + 1, x => 2 * x])
-let res = fn(4) // 9
-console.log(res)
-
+/**
+ * @param {number[]} arr
+ * @param {Function} fn
+ * @return {number[]}
+ */
+// var map = function (arr, fn) {
+//     for (let i = 0; i < arr.length; i++) {
+//         arr[i] = fn(arr[i], i)
+//     }
+//     return arr
+// };
+//
+// console.log(map([1, 2, 3], function plusone(n) {
+//     return n + 1;
+// }))
