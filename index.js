@@ -159,32 +159,96 @@
 /**
  * @return {Generator<number>}
  */
-var fibGenerator = function*() {
-    let prev = 0
-    let curr = 1
-    yield prev
-    yield curr
+// var fibGenerator = function*() {
+//     let prev = 0
+//     let curr = 1
+//     yield prev
+//     yield curr
+//
+//     let tmp
+//     while (true){
+//         tmp = curr + prev
+//         prev = curr
+//         curr = tmp
+//         yield tmp
+//     }
+// }
+//
+//
+// const gen = fibGenerator();
+// console.log(gen.next().value);
+// console.log(gen.next().value);
+// console.log(gen.next().value);
+// console.log(gen.next().value);
+// console.log(gen.next().value);
+// console.log(gen.next().value);
+// console.log(gen.next().value);
+// console.log(gen.next().value);
+// console.log(gen.next().value);
+// console.log(gen.next().value);
 
-    let tmp
-    while (true){
-        tmp = curr + prev
-        prev = curr
-        curr = tmp
-        yield tmp
+// Task 9
+// 2665. Counter II
+
+/**
+ * @param {integer} init
+ * @return { increment: Function, decrement: Function, reset: Function }
+ */
+// var createCounter = function (init) {
+//     class counter {
+//         constructor(init) {
+//             this.value = init
+//             this.defaultValue = init
+//         }
+//
+//         increment() {
+//             this.value++
+//             return this.value
+//         }
+//
+//         decrement() {
+//             this.value--
+//             return this.value
+//         }
+//
+//         reset() {
+//             this.value = this.defaultValue
+//             return this.value
+//         }
+//     }
+//
+//     return new counter(init)
+// }
+//
+//
+// const counter = createCounter(5)
+// console.log(counter)
+// console.log(counter.increment()); // 6
+// console.log(counter.reset()); // 5
+// console.log(counter.decrement());// 4
+
+// Task 10
+// 2666. Allow One Function Call
+
+/**
+ * @param {Function} fn
+ * @return {Function}
+ */
+var once = function (fn) {
+    let called = false
+    return function (...args) {
+        if (called) return undefined
+        else {
+            called = true
+            return fn(...args)
+        }
     }
-}
+};
 
 
-const gen = fibGenerator();
-console.log(gen.next().value);
-console.log(gen.next().value);
-console.log(gen.next().value);
-console.log(gen.next().value);
-console.log(gen.next().value);
-console.log(gen.next().value);
-console.log(gen.next().value);
-console.log(gen.next().value);
-console.log(gen.next().value);
-console.log(gen.next().value);
+let fn = (a, b, c) => (a + b + c)
+let onceFn = once(fn)
 
+console.log(onceFn(1, 2, 3)); // 6
+console.log(onceFn(2, 3, 6)); // returns undefined without calling fn
 
