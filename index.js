@@ -252,3 +252,40 @@ let onceFn = once(fn)
 console.log(onceFn(1, 2, 3)); // 6
 console.log(onceFn(2, 3, 6)); // returns undefined without calling fn
 
+// Task 11
+// 2667. Create Hello World Function
+
+// /**
+//  * @return {Function}
+//  */
+// var createHelloWorld = function() {
+//
+//     return function(...args) {
+//         return 'Hello World'
+//     }
+// };
+//
+// /**
+//  * const f = createHelloWorld();
+//  * f(); // "Hello World"
+//  */
+
+// Task 12
+// 2677. Chunk Array
+
+/**
+ * @param {Array} arr
+ * @param {number} size
+ * @return {Array}
+ */
+var chunk = function(arr, size) {
+    let arrays = []
+    for (let i = 0; i < arr.length; i+=size) {
+        if (i+size > arr.length) {
+            arrays.push(arr.slice(i,arr.length))
+        }
+        else arrays.push(arr.slice(i,i+size))
+
+    }
+    return arrays
+};
