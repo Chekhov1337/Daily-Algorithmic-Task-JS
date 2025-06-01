@@ -478,16 +478,41 @@
 // Task 19
 // 2727. Is Object Empty
 
+// /**
+//  * @param {Object|Array} obj
+//  * @return {boolean}
+//  */
+// var isEmpty = function(obj) {
+//     if ((obj.length === undefined || obj.length ===0) && Object.keys(obj).length === 0){
+//         return true
+//     }else {
+//         return false
+//     }
+// };
+//
+// console.log(isEmpty([]))
+
+// Task -1
+// 2618. Check if Object Instance of Class
+
 /**
- * @param {Object|Array} obj
+ * @param {*} obj
+ * @param {*} classFunction
  * @return {boolean}
  */
-var isEmpty = function(obj) {
-    if ((obj.length === undefined || obj.length ===0) && Object.keys(obj).length === 0){
-        return true
-    }else {
-        return false
-    }
-};
+// var checkIfInstanceOf = function (obj, classFunction) {
+//     console.log(Object.getPrototypeOf(obj))
+//     console.log(classFunction)
+//
+//     return Object.getPrototypeOf(obj).constructor.name == classFunction.name ? true : false
+// };
+//
+//
+// class Animal {
+// };
+//
+// class Dog extends Animal {
+// };
+//
+// console.log(checkIfInstanceOf(new Dog(), Animal));
 
-console.log(isEmpty([]))
