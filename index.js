@@ -338,7 +338,7 @@
 //  * argumentsLength(1, 2, 3); // 3
 //  */
 
-// Task 14
+// Task 15
 // 2704. To Be Or Not To Be
 
 /**
@@ -370,7 +370,7 @@
 // console.log(expect(5).toBe(null)); // true
 // console.log(expect(5).notToBe(5)); // throws "Equal"
 
-// Task 15
+// Task 16
 // 2723. Add Two Promises
 
 /**
@@ -387,5 +387,107 @@
 // addTwoPromises(Promise.resolve(2), Promise.resolve(2))
 //     .then(console.log); // 4
 
-// Task 16
-// 2723. Add Two Promises
+// Task 17
+// 2724. Sort By
+
+/**
+ * @param {Array} arr
+ * @param {Function} fn
+ * @return {Array}
+ */
+// var sortBy = function (arr, fn) {
+//     return arr.sort((a, b) => {
+//         return fn(a) > fn(b) ? 1 : -1
+//     })
+// };
+//
+// console.log(sortBy([[3, 4], [5, 2], [10, 1]], (x) => x[1]))
+
+// Task 18
+// 2726. Calculator with Method Chaining
+
+// class Calculator {
+//
+//     /**
+//      * @param {number} value
+//      */
+//     constructor(value) {
+//         this.res = value
+//     }
+//
+//     /**
+//      * @param {number} value
+//      * @return {Calculator}
+//      */
+//     add(value) {
+//         this.res += value
+//         return this
+//     }
+//
+//     /**
+//      * @param {number} value
+//      * @return {Calculator}
+//      */
+//     subtract(value) {
+//         this.res -= value
+//         return this
+//     }
+//
+//     /**
+//      * @param {number} value
+//      * @return {Calculator}
+//      */
+//     multiply(value) {
+//         this.res *= value
+//         return this
+//     }
+//
+//     /**
+//      * @param {number} value
+//      * @return {Calculator}
+//      */
+//     divide(value) {
+//         if (value === 0) {
+//             throw 'Division by zero is not allowed'
+//         } else {
+//             this.res /= value
+//             return this
+//         }
+//
+//     }
+//
+//     /**
+//      * @param {number} value
+//      * @return {Calculator}
+//      */
+//     power(value) {
+//         this.res = this.res ** value
+//         return this
+//     }
+//
+//     /**
+//      * @return {number}
+//      */
+//     getResult() {
+//         return this.res
+//     }
+// }
+
+// console.log(new Calculator(2).multiply(5).power(2).getResult());
+
+// Task 19
+// 2727. Is Object Empty
+
+/**
+ * @param {Object|Array} obj
+ * @return {boolean}
+ */
+var isEmpty = function(obj) {
+    if ((obj.length === undefined || obj.length ===0) && Object.keys(obj).length === 0){
+        return true
+    }else {
+        return false
+    }
+};
+
+console.log(isEmpty([]))
