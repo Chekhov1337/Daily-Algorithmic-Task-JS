@@ -234,23 +234,23 @@
  * @param {Function} fn
  * @return {Function}
  */
-var once = function (fn) {
-    let called = false
-    return function (...args) {
-        if (called) return undefined
-        else {
-            called = true
-            return fn(...args)
-        }
-    }
-};
-
-
-let fn = (a, b, c) => (a + b + c)
-let onceFn = once(fn)
-
-console.log(onceFn(1, 2, 3)); // 6
-console.log(onceFn(2, 3, 6)); // returns undefined without calling fn
+// var once = function (fn) {
+//     let called = false
+//     return function (...args) {
+//         if (called) return undefined
+//         else {
+//             called = true
+//             return fn(...args)
+//         }
+//     }
+// };
+//
+//
+// let fn = (a, b, c) => (a + b + c)
+// let onceFn = once(fn)
+//
+// console.log(onceFn(1, 2, 3)); // 6
+// console.log(onceFn(2, 3, 6)); // returns undefined without calling fn
 
 // Task 11
 // 2667. Create Hello World Function
@@ -273,19 +273,119 @@ console.log(onceFn(2, 3, 6)); // returns undefined without calling fn
 // Task 12
 // 2677. Chunk Array
 
-/**
- * @param {Array} arr
- * @param {number} size
- * @return {Array}
- */
-var chunk = function(arr, size) {
-    let arrays = []
-    for (let i = 0; i < arr.length; i+=size) {
-        if (i+size > arr.length) {
-            arrays.push(arr.slice(i,arr.length))
-        }
-        else arrays.push(arr.slice(i,i+size))
+// /**
+//  * @param {Array} arr
+//  * @param {number} size
+//  * @return {Array}
+//  */
+// var chunk = function(arr, size) {
+//     let arrays = []
+//     for (let i = 0; i < arr.length; i+=size) {
+//         if (i+size > arr.length) {
+//             arrays.push(arr.slice(i,arr.length))
+//         }
+//         else arrays.push(arr.slice(i,i+size))
+//
+//     }
+//     return arrays
+// };
 
-    }
-    return arrays
-};
+// Task 13
+// 2695. Array Wrapper
+
+// /**
+//  * @param {number[]} nums
+//  * @return {void}
+//  */
+// var ArrayWrapper = function (nums) {
+//     this.value = nums
+// };
+//
+// /**
+//  * @return {number}
+//  */
+// ArrayWrapper.prototype.valueOf = function () {
+//     return this.value.reduce((a, b) => a + b, 0)
+// }
+//
+// /**
+//  * @return {string}
+//  */
+// ArrayWrapper.prototype.toString = function () {
+//     return '[' + this.value.toString() + ']'
+// }
+//
+// /**
+//  * const obj1 = new ArrayWrapper([1,2]);
+//  * const obj2 = new ArrayWrapper([3,4]);
+//  * obj1 + obj2; // 10
+//  * String(obj1); // "[1,2]"
+//  * String(obj2); // "[3,4]"
+//  */
+
+// Task 14
+// 2703. Return Length of Arguments Passed
+
+// /**
+//  * @param {...(null|boolean|number|string|Array|Object)} args
+//  * @return {number}
+//  */
+// var argumentsLength = function(...args) {
+//     return args.length
+// };
+//
+// /**
+//  * argumentsLength(1, 2, 3); // 3
+//  */
+
+// Task 14
+// 2704. To Be Or Not To Be
+
+/**
+ * @param {string} val
+ * @return {Object}
+ */
+// var expect = function (val) {
+//     let exp = new Object()
+//     exp.toBe = function (newVal) {
+//         if (val === newVal) {
+//             return true
+//         } else {
+//             throw 'Not Equal'
+//         }
+//     }
+//
+//     exp.notToBe = function (newVal) {
+//         if (val !== newVal) {
+//             return true
+//         } else {
+//             throw 'Equal'
+//         }
+//     }
+//     return exp
+//
+// };
+//
+//
+// console.log(expect(5).toBe(null)); // true
+// console.log(expect(5).notToBe(5)); // throws "Equal"
+
+// Task 15
+// 2723. Add Two Promises
+
+/**
+ * @param {Promise} promise1
+ * @param {Promise} promise2
+ * @return {Promise}
+ */
+// var addTwoPromises = async function (promise1, promise2) {
+//     return await promise1 + await promise2
+//
+// };
+//
+//
+// addTwoPromises(Promise.resolve(2), Promise.resolve(2))
+//     .then(console.log); // 4
+
+// Task 16
+// 2723. Add Two Promises
